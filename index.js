@@ -30,7 +30,7 @@ function register($form) {
                 $('#mce-EMAIL').val('');
             } else {
                 // Something went wrong, do something to notify the user.
-                $('#subscribe-result').html('<p>' + data.msg.substring(4) + '</p>');
+                $('#subscribe-result').html('<p>' + data.msg + '</p>');
             }
         }
     })
