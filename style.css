@@ -50,6 +50,8 @@ html {
 }
 
 .container > .logo {
+    height: 59px;
+    width: auto;
     margin-bottom: 23px;
 }
 
