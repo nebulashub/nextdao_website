@@ -24,6 +24,11 @@ html {
     align-items: center;
     justify-content: space-between;
 }
+
+.navbar>.logo-sm {
+    height: 18px;
+    width: auto;
+}
 .btn-lang {
     color: white;
     text-decoration: none;
@@ -43,6 +48,18 @@ html {
     justify-content: center;
     text-align: center;
 }
+
+.container > .logo {
+    margin-bottom: 23px;
+}
+
+.container .btn {
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 11px 39px;
+}
+
 .title {
     font-family: Saira Condensed;
     font-size: 50px;
@@ -94,7 +111,9 @@ html {
     border: none;
     cursor: pointer;
     outline: none;
-    background-color: #fff;
+    background-color: #000;
+    color: #fff;
+    border-left: 1px solid #fff;
 }
 #mc-embedded-subscribe:focus {
     border: 0.5px solid white;
