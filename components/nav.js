@@ -1,5 +1,5 @@
 import React from 'react'
-import { i18n } from '../i18n';
+import { i18n, Link } from '../i18n';
 
 const handleChangeLang = () => {
   i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en')
@@ -12,7 +12,9 @@ const showCurrentLang = () => {
 const Nav = () => (
   <header>
     <section className="nav">
-      <img src="/images/logo_sm.png" alt="NextDAO" />
+      <Link href="/">
+        <a><img src="/images/logo_sm.png" alt="NextDAO" /></a>
+      </Link>
       <button onClick={handleChangeLang}> {showCurrentLang()} </button>
     </section>
     <style jsx>{`
@@ -34,7 +36,7 @@ const Nav = () => (
         justify-content: space-between;
       }
 
-      .nav>img {
+      .nav img {
         height: 18px;
         width: 92px;
       }

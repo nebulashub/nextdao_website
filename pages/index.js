@@ -38,6 +38,7 @@ const Landing = ({ t }) => (
 
       .landing .title {
         font-size:28px;
+        letter-spacing:8px;
       }
 
       .landing .staking-method-list {
@@ -127,7 +128,6 @@ const DStaking = ({ t }) => (
           <li>规避产生集体性损失的风险；</li>
           <li>参与质押更轻松，活跃度有望大幅提高。</li>
         </ul>
-        <a className="btn btn-black" target="__blank" href="#">whitepaper</a>
       </section>
 
       <section className="sub-container nax">
@@ -143,6 +143,8 @@ const DStaking = ({ t }) => (
                 <p>nextDAO上的首个Token。</p>
               </div>
             </div>
+            <a className="btn btn-black btn-whitepaper" target="__blank" href="#">NAX whitepaper</a>
+
             <h5>NAX usage scenarios in the nebula ecosystem</h5>
             <img className="img-nax-usecase" src="/images/nax_usecase.png" alt="NAX usecase" />
           </div>
@@ -193,6 +195,10 @@ const DStaking = ({ t }) => (
 
       ul.feature li {
         margin-right: 15px;
+      }
+
+      .btn-whitepaper {
+        margin: 10px auto;
       }
 
       .sub-container.nax {

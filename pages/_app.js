@@ -1,7 +1,9 @@
 import React from 'react'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import { appWithTranslation } from '../i18n'
 import Head from 'next/head'
+import Router from "next/router";
+import withGA from "next-ga";
 import 'purecss/build/pure.css'
 import 'purecss/build/grids-responsive-min.css'
 import 'animate.css/animate.min.css'
@@ -21,4 +23,6 @@ class MyApp extends App {
     }
 }
 
-export default appWithTranslation(MyApp)
+const GACode = "UA-144273829-1";
+
+export default appWithTranslation(withGA(GACode, Router)(MyApp))
