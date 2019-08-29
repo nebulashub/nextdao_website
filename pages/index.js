@@ -93,7 +93,7 @@ const NextDAOIntro = ({ t }) => (
 
       .nextdao-intro .eco {
         width: 394px;
-        height: 381px;
+        height: auto;
         margin: 10px auto;
       }
 
