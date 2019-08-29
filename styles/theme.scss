@@ -2,12 +2,17 @@
 @import './button.scss';
 
 $title-font-family: 'Saira Condensed', sans-serif;
+$content-font-family: sans-serif, 'Saira Condensed';
 
 body {
     font-family: $title-font-family;
 }
 
 h1,h2,h3,h4,h5 {
+    font-family: $title-font-family;
+}
+
+p, label {
     font-family: $title-font-family;
 }
 

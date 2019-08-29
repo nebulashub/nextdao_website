@@ -25,4 +25,4 @@ class MyApp extends App {
 
 const GACode = "UA-144273829-1";
 
-export default appWithTranslation(withGA(GACode, Router)(MyApp))
+export default withGA(GACode, Router)(appWithTranslation(MyApp))

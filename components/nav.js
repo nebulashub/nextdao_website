@@ -13,7 +13,7 @@ const Nav = () => (
   <header>
     <section className="nav">
       <Link href="/">
-        <a><img src="/images/logo_sm.png" alt="NextDAO" /></a>
+        <a><img src="/static/images/logo_sm.png" alt="NextDAO" /></a>
       </Link>
       <button onClick={handleChangeLang}> {showCurrentLang()} </button>
     </section>
@@ -41,13 +41,13 @@ const Nav = () => (
         width: 92px;
       }
 
-      .nav>button {
+      .nav button {
         border: transparent;
         background: transparent;
         color: #fff;
       }
 
-      .nav>button:hover, .nav>button:active:hover {
+      .nav button:hover, .nav>button:active:hover {
         outline: transparent;
       }
     `}</style>

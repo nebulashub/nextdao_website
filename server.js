@@ -2,7 +2,6 @@ const express = require('express')
 const path = require('path')
 const next = require('next')
 const nextI18NextMiddleware = require('next-i18next/middleware').default
-const serveStatic = require('serve-static');
 
 const nextI18next = require('./i18n')
 
@@ -14,7 +13,6 @@ const handle = app.getRequestHandler();
     await app.prepare()
     const server = express()
 
-    server.use(serveStatic(path.resolve('./static')));
     server.use(nextI18NextMiddleware(nextI18next))
 
     server.get('*', (req, res) => handle(req, res))

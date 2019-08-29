@@ -6,12 +6,12 @@ import Mailchimp from 'react-mailchimp-form'
 
 const Landing = ({ t }) => (
   <section className="landing">
-    <img className="logo" src="/images/logo_lg.png" alt="NextDAO" />
+    <img className="logo" src="/static/images/logo_lg.png" alt="NextDAO" />
     <h2 className="title">Smart Asset - {t('redefining-the-token-economy')} </h2>
 
     <div className="staking-method-list">
-      <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">去钱包质押</a>
-      <a href="#" target="__blank" className="btn btn-outline">去网页质押</a>
+      <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">{t("wallet-staking")}</a>
+      <a href="#" target="__blank" className="btn btn-outline">{t("web-staking")}</a>
     </div>
     <style jsx>{`
       .landing {
@@ -19,7 +19,7 @@ const Landing = ({ t }) => (
         text-align: center;
         height: 100vh;
         color: #fff;
-        background-image: url("/images/banner.png"),
+        background-image: url("/static/images/banner.png"),
         linear-gradient(360deg,rgba(45,47,64,1) 0%,rgba(14,11,18,1) 100%);
         background-repeat: no-repeat;
         background-position: center center;
@@ -57,14 +57,14 @@ const NextDAOIntro = ({ t }) => (
     <section className="container">
       <div className="pure-g">
         <div className="pure-u-1-2">
-          <h3>什么是nextDAO</h3>
-          <p>下一代的DAO（去中心化自治组织）。第一个承接智能资产平台。</p>
+          <h3>{t("what-is-nextdao")}</h3>
+          <p>{t("what-is-nextdao-p")}</p>
 
           <section className="sub-container">
             <h4 className="sub-title">
-              - nextDAO生态特点
+              - {t("nextdao-eco-feature")}
             </h4>
-            <p>关注链上互动和协作，通过提供去中心化金融工具和产品，重新定义通证经济，从而通过智能资产撬动社区，发现新的业务场景，推动生态应用落地。</p>
+            <p>{t("nextdao-eco-feature-p")}</p>
           </section>
 
           <section className="sub-container">
@@ -75,7 +75,7 @@ const NextDAOIntro = ({ t }) => (
           </section>
         </div>
         <div className="pure-u-1-2 eco-container">
-          <img className="eco" src="/images/eco.png" alt="NextDAO ECO" />
+          <img className="eco" src="/static/images/eco.png" alt="NextDAO ECO" />
         </div>
       </div>
     </section>
@@ -110,12 +110,12 @@ const DStaking = ({ t }) => (
         <h4>Centralized pledge vs decentralized pledge</h4>
         <div className="pure-g">
           <div className="pure-u-1-2">
-            <img src="/images/dstaking_01.png" alt="Centeralized Staking" />
+            <img src="/static/images/dstaking_01.png" alt="Centeralized Staking" />
             <label>Centeralized Staking</label>
           </div>
 
           <div className="pure-u-1-2">
-            <img src="/images/dstaking_02.png" alt="dStaking" />
+            <img src="/static/images/dstaking_02.png" alt="dStaking" />
             <label>dStaking</label>
           </div>
         </div>
@@ -135,7 +135,7 @@ const DStaking = ({ t }) => (
           <div className="pure-u-1-2">
             <div className="nax-intro">
               <div className="nax-logo">
-                <img alt="NAX" src="/images/nax_logo.png" />
+                <img alt="NAX" src="/static/images/nax_logo.png" />
               </div>
               <div className="nax-summary">
                 <h5>NAX</h5>
@@ -146,11 +146,11 @@ const DStaking = ({ t }) => (
             <a className="btn btn-black btn-whitepaper" target="__blank" href="#">NAX whitepaper</a>
 
             <h5>NAX usage scenarios in the nebula ecosystem</h5>
-            <img className="img-nax-usecase" src="/images/nax_usecase.png" alt="NAX usecase" />
+            <img className="img-nax-usecase" src="/static/images/nax_usecase.png" alt="NAX usecase" />
           </div>
 
           <div className="pure-u-1-2 nax-distribution">
-            <img className="img-nax-distribution" src="/images/nax_distribution.png" alt="NAX distribution" />
+            <img className="img-nax-distribution" src="/static/images/nax_distribution.png" alt="NAX distribution" />
             <label>Dynamic distribution strategy diagram</label>
           </div>
         </div>
@@ -276,7 +276,7 @@ const Nebulas = ({ t }) => (
         padding-top: 90px;
         padding-bottom: 60px;
         color: #fff;
-        background-image: url("/images/nebulas_bg.png"),
+        background-image: url("/static/images/nebulas_bg.png"),
         linear-gradient(360deg,rgba(45,47,64,1) 0%,rgba(14,11,18,1) 100%);
         background-position: center center;
         background-repeat: no-repeat;
