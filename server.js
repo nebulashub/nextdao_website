@@ -1,5 +1,4 @@
 const express = require('express')
-const path = require('path')
 const next = require('next')
 const nextI18NextMiddleware = require('next-i18next/middleware').default
 

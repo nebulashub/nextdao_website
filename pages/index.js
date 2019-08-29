@@ -56,7 +56,7 @@ const NextDAOIntro = ({ t }) => (
   <section className="nextdao-intro">
     <section className="container">
       <div className="pure-g">
-        <div className="pure-u-1-2">
+        <div className="pure-u-1 pure-u-lg-1-2">
           <h3>{t("what-is-nextdao")}</h3>
           <p>{t("what-is-nextdao-p")}</p>
 
@@ -74,8 +74,8 @@ const NextDAOIntro = ({ t }) => (
             <p>关注链上互动和协作，通过提供去中心化金融工具和产品，重新定义通证经济，从而通过智能资产撬动社区，发现新的业务场景，推动生态应用落地。</p>
           </section>
         </div>
-        <div className="pure-u-1-2 eco-container">
-          <img className="eco" src="/static/images/eco.png" alt="NextDAO ECO" />
+        <div className="pure-u-1 pure-u-lg-1-2 eco-container">
+          <img className="eco pure-img" src="/static/images/eco.png" alt="NextDAO ECO" />
         </div>
       </div>
     </section>
@@ -94,6 +94,7 @@ const NextDAOIntro = ({ t }) => (
       .nextdao-intro .eco {
         width: 394px;
         height: 381px;
+        margin: 10px auto;
       }
 
     `}</style>
@@ -109,13 +110,13 @@ const DStaking = ({ t }) => (
       <section className="sub-container staking-compare">
         <h4>Centralized pledge vs decentralized pledge</h4>
         <div className="pure-g">
-          <div className="pure-u-1-2">
-            <img src="/static/images/dstaking_01.png" alt="Centeralized Staking" />
+          <div className="pure-u-1 pure-u-lg-1-2">
+            <img className="pure-img" src="/static/images/dstaking_01.png" alt="Centeralized Staking" />
             <label>Centeralized Staking</label>
           </div>
 
-          <div className="pure-u-1-2">
-            <img src="/static/images/dstaking_02.png" alt="dStaking" />
+          <div className="pure-u-1 pure-u-lg-1-2">
+            <img className="pure-img" src="/static/images/dstaking_02.png" alt="dStaking" />
             <label>dStaking</label>
           </div>
         </div>
@@ -132,7 +133,7 @@ const DStaking = ({ t }) => (
 
       <section className="sub-container nax">
         <div className="pure-g">
-          <div className="pure-u-1-2">
+          <div className="pure-u-1 pure-u-lg-1-2">
             <div className="nax-intro">
               <div className="nax-logo">
                 <img alt="NAX" src="/static/images/nax_logo.png" />
@@ -146,11 +147,11 @@ const DStaking = ({ t }) => (
             <a className="btn btn-black btn-whitepaper" target="__blank" href="#">NAX whitepaper</a>
 
             <h5>NAX usage scenarios in the nebula ecosystem</h5>
-            <img className="img-nax-usecase" src="/static/images/nax_usecase.png" alt="NAX usecase" />
+            <img className="img-nax-usecase pure-img" src="/static/images/nax_usecase.png" alt="NAX usecase" />
           </div>
 
-          <div className="pure-u-1-2 nax-distribution">
-            <img className="img-nax-distribution" src="/static/images/nax_distribution.png" alt="NAX distribution" />
+          <div className="pure-u-1 pure-u-lg-1-2 nax-distribution">
+            <img className="img-nax-distribution pure-img" src="/static/images/nax_distribution.png" alt="NAX distribution" />
             <label>Dynamic distribution strategy diagram</label>
           </div>
         </div>
@@ -177,7 +178,7 @@ const DStaking = ({ t }) => (
       .staking-compare img {
         width: 388px;
         height: 299px;
-        margin: 0 auto;
+        margin: 10px auto;
         display: block;
         text-align: center;
       }

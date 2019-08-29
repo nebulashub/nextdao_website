@@ -1,0 +1,14 @@
+$mobile-size: 768px;
+
+@media only screen and (max-width: $mobile-size) {
+    .dstaking {
+        .nax.sub-container {
+            .btn {
+                margin-right: 0 !important;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -20,6 +20,7 @@ const Nav = () => (
     <style jsx>{`
       header {
         background-color: #0E0B12;
+        padding: 0 1rem;
       }
 
       .nav {
@@ -31,7 +32,7 @@ const Nav = () => (
         align-items: center;
         top: 0;
         z-index:1;
-        padding-top: 25px;
+        padding: 25px 0;
         background-color: #0E0B12;
         justify-content: space-between;
       }

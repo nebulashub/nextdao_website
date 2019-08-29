@@ -15,6 +15,9 @@ class MyApp extends App {
             <>
                 <Head>
                     <title>NextDao</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+                    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
                     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Saira+Condensed&display=swap" rel="stylesheet" />
                 </Head>
                 <Component {...pageProps} />
