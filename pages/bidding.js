@@ -195,9 +195,11 @@ const BiddingRule = ({ t }) => (
         <p>{t("calc-formula-p1")}</p>
         <p>{t("calc-formula-p2")}</p>
         <p>{t("calc-formula-p3")}</p>
+        <p>{t("calc-formula-p4")}</p>
 
         <h4>{t("risk-warning")}</h4>
-        <p>{t("risk-warning-p")}</p>
+        <p>{t("risk-warning-p1")}</p>
+        <p>{t("risk-warning-p2")}</p>
 
         <style jsx>{`
       .container {
@@ -230,6 +232,8 @@ const Bidding = (props) => (
     <>
         <Head>
             <title>{props.t("title")}</title>
+            <link rel="shortcut icon" href="/static/nax.ico" type="image/x-icon" />
+            <link rel="icon" href="/static/nax.ico" type="image/x-icon"></link>
         </Head>
         <div className="bidding">
             <Banner {...props} />
