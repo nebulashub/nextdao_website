@@ -5,5 +5,21 @@
     "what-is-nextdao": "What is NextDAO",
     "what-is-nextdao-p": "What is NextDAO xxx",
     "nextdao-eco-feature": "NextDAO eco-system feature",
-    "nextdao-eco-feature-p": "focus ..."
+    "nextdao-eco-feature-p": "focus ...",
+    "fisrt-product-dstaking": "第一个产品：去中心化质押（dStaking）",
+    "fisrt-product-dstaking-p": "区别于需要向合约转账的传统质押，去中心化质押的合约记录着用户的质押契约，用户资产仍然存放在用户个人地址之上。",
+    "staking-vs": "Centralized pledge vs decentralized pledge",
+    "c-staking": "Centeralized Staking",
+    "dstaking": "dStaking",
+    "dstaking-feature": "dStaking三大特点",
+    "dstaking-feature-p1": "用户对个人资产享有绝对所有权；",
+    "dstaking-feature-p2": "规避产生集体性损失的风险；",
+    "dstaking-feature-p3": "参与质押更轻松，活跃度有望大幅提高。",
+    "nax-intro-p1": "通过去中心化质押产生的nextToken。",
+    "nax-intro-p2": "nextDAO上的首个Token。",
+    "whitepaper": "白皮书",
+    "nax-usecase": "NAX usage scenarios in the nebula ecosystem",
+    "dynamic-distribution-diagram": "NAX usage scenarios in the nebula ecosystem",
+    "nebulas-intro": "In order to respect the fairness, legitimacy and power of assets, we have made the design of the distribution model concise, clear and effective. Combined with the ecologi- cal characteristics of Nebulas, more incentives and economic game scenarios are handed over to application scenarios. With this principle, incentive and consumption scenarios within the application scenario can be more varied and diverse.",
+    "investors-partners": "Investors & Partners"
 }

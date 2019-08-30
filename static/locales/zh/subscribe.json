@@ -1,0 +1,8 @@
+{
+    "sending": "发送...",
+    "success": "感谢你的订阅",
+    "error": "订阅出现错误",
+    "empty": "e-mail 地址必须输入",
+    "duplicate": "当前 e-mail 地址已经订阅过",
+    "button": "订阅"
+}
