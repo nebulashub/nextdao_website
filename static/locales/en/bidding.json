@@ -8,7 +8,7 @@
     "intro": "Introduce",
     "intro-p": "The NAX token is based on the concept of the ecosystem contribution — similar to Nebulas’ PoD consensus mechanism. NAX is generated via Nebulas’ new dStaking method which is not only the process of coin staking within the Nebulas ecosystem but also a redefinition of the blockchain Token Economy. NAX will be used to promote ecosystem development of Nebulas and even the entire Nebulas Token Economy. ",
     "whitepaper": "NAX whitepaper",
-    "whitepaper_url": "/doc/nax_whitepaper_en.pdf",
+    "whitepaper_url": "/static/docs/nax_whitepaper_en.pdf",
     "official-website": "nextDAO Website",
     "bidding-rule": "NAX Issuance Details",
     "bidding-rule-p1": "Token name: NAX",
@@ -29,5 +29,5 @@
     "calc-formula-p4": "The active soft top is set to 20,000 NAS with a NAX distribution amount of 3 million. For example, the total amount of NAX deposited from all users equal 600,000 NAS. If the user A deposited 15,000 NAS, when the event ends, user A will receive 75,000 NAX with a refund of 14,500 NAS. A will receive: (15,000/600,000)*3,000,000=75,000 NAX with a refund of: 15,000 - (15,000/600,000)*20,000=14,500 NAS",
     "risk-warning": "Disclaimer",
     "risk-warning-p1": "1. Do not use any Exchange address for transfers. Please only transfer funds from a Nebulas address you completely control. nextDAO will not be liable for loss arising from any negligence or misconduct by users.",
-    "risk-warning-p2": "2. As an innovative smart asset, NAX value will vary and fluctuate with market conditions. Users shall do a good background investigation and participate carefully according to their own risk tolerance and trading of crypto currency experience."    
+    "risk-warning-p2": "2. As an innovative smart asset, NAX value will vary and fluctuate with market conditions. Users shall do a good background investigation and participate carefully according to their own risk tolerance and trading of crypto currency experience."
 }

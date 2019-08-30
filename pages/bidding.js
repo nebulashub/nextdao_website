@@ -174,7 +174,7 @@ const BiddingStart = ({ t }) => (
           text-decoration: none;
           display: flex;
           align-items: center;
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
 
         .nax-intro a>img {
