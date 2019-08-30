@@ -8,7 +8,7 @@
     "intro": "介绍",
     "intro-p": "NAX是基于星云PoD的贡献证明的理念，以dStaking的形式产生的，它不仅是星云体系下的staking coin，还是在星云生态上Token Economy的重新定义。它将用于推动星云的生态发展，甚至推动整个星云Token Economy的发展。",
     "whitepaper": "NAX白皮书",
-    "whitepaper_url": "/doc/nax_whitepaper_cn.pdf",
+    "whitepaper_url": "/static/docs/nax_whitepaper_cn.pdf",
     "official-website": "nextDAO官网",
     "bidding-rule": "NAX秒杀信息",
     "bidding-rule-p1": "代币名称：NAX",
@@ -29,5 +29,5 @@
     "calc-formula-p3": "例如：活动软顶是2万NAS，NAX分发量300万。已秒杀总额60万NAS，其中用户A秒杀了1.5万NAS，则活动结束后，用户A获得NAX的数量为1.5/60x300=7.5万NAX，用户A被扣除NAS数量为1.5万/60万x2万=500NAS，用户A获得退还的NAS数量为15000-500=14500NAS。",
     "risk-warning": "注意事项与风险提示",
     "risk-warning-p1": "1.请勿使用交易所地址进行秒杀转账，因个人操作原因导致的资产损失，nextDAO不承担责任。",
-    "risk-warning-p2": "2.NAX作为创新性数字资产，价格会随着市场流通情况出现涨跌波动，请用户做好充分的背景调查后根据自身承受风险程度以及交易数字货币经验谨慎参与。"    
+    "risk-warning-p2": "2.NAX作为创新性数字资产，价格会随着市场流通情况出现涨跌波动，请用户做好充分的背景调查后根据自身承受风险程度以及交易数字货币经验谨慎参与。"
 }
