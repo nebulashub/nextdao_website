@@ -240,6 +240,32 @@ const BiddingRule = ({ t }) => (
     </section>
 )
 
+const Footer = () => (
+    <footer>
+        <span>Power By <img src="/static/images/logo_black.png" alt="NextDAO" /></span>
+        <style jsx>
+            {`
+            footer {
+                border-top: 1px solid #DFDEE6;
+                margin: 1rem 2rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            span {
+                padding: 1rem;
+            }
+
+            img {
+                height: 1rem;
+                margin-left: 0.5rem;
+            }
+        `}
+        </style>
+    </footer>
+)
+
 const Bidding = (props) => (
     <>
         <Head>
@@ -248,12 +274,13 @@ const Bidding = (props) => (
             <link rel="icon" href="/static/nax.ico" type="image/x-icon"></link>
         </Head>
         <div className="bidding">
+
             <Banner {...props} />
             <BiddingAmountDetail {...props} />
             <BiddingStart {...props} />
             <BiddingRule {...props} />
-            <style jsx>{`
-    `}</style>
+            <Footer />
+
         </div>
     </>
 )
