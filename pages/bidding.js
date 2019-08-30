@@ -242,7 +242,7 @@ const BiddingRule = ({ t }) => (
 
 const Footer = () => (
     <footer>
-        <span>Power By <img src="/static/images/logo_black.png" alt="NextDAO" /></span>
+        <span>Power By <img src="/static/images/logo_black.png" alt="nextDAO" /></span>
         <style jsx>
             {`
             footer {

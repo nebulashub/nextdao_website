@@ -299,6 +299,10 @@ const Nebulas = ({ t }) => (
         line-height:28px;
         margin: 30px auto;
       }
+
+      a {
+        color: #fff;
+      }
     `}</style>
   </section>
 )
