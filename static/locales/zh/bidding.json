@@ -7,7 +7,7 @@
     "start-time": "2019年9月3日13:00（utc+8）",
     "intro": "介绍",
     "whitepaper": "白皮书",
-    "whitepaper_url": "/doc",
+    "whitepaper_url": "/static/docs/nax_whitepaper_cn.pdf",
     "official-website": "官网",
     "bidding-rule": "认购规则",
     "bidding-rule-p": "为了保障星云投资者的权益，官方推出NAX认购活动作为定价参考，募集20,000NAS的同时释放3,000,000NAX，所募集的NAS将投入到NAX的发展使用当中。考虑到公平性与正当性，让更多的用户拥有获得NAX的机会，本次活动不设置参投条件，最低5NAS起，超出目标额度后，可以继续参与，认购结束后会根据投入的NAS占比来分配NAX，剩余部分按照比例退还到参与认购的地址上，具体退还比例请参考计算公式。",

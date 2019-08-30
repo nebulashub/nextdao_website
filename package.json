@@ -6,8 +6,7 @@
     "dev": "node server.js",
     "build": "next build",
     "export": "yarn build && next export",
-    "start": "next start",
-    "start-server": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
