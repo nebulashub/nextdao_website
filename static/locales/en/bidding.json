@@ -28,6 +28,6 @@
     "calc-formula-p3": "NAS return method if the soft limit is reached: (user deposit amount/total deposit amount) *Total amount of NAX to be distributed",
     "calc-formula-p3": "The active soft top is set to 20,000 NAS with a NAX distribution amount of 3 million. For example, the total amount of NAX deposited from all users equal 600,000 NAS. If the user A deposited 15,000 NAS, when the event ends, user A will receive 75,000 NAX with a refund of 14,500 NAS. A will receive: (15,000/600,000)*3,000,000=75,000 NAX with a refund of: 15,000 - (15,000/600,000)*20,000=14,500 NAS",
     "risk-warning": "Disclaimer",
-    "risk-warning-p1": "1. Do not use the exchange address for transfers. Only transfer funds from a Nebulas address you completely control. nextDAO is not responsible for the loss of assets due to personal operation.",
-    "risk-warning-p2": "2. As an innovative digital asset, NAX value will vary and fluctuate with market conditions. Users are required to do a good background investigation and participate carefully according to their own risk tolerance and trading of crypto currency experience."    
+    "risk-warning-p1": "1. Do not use any Exchange address for transfers. Please only transfer funds from a Nebulas address you completely control. nextDAO will not be liable for loss arising from any negligence or misconduct by users.",
+    "risk-warning-p2": "2. As an innovative smart asset, NAX value will vary and fluctuate with market conditions. Users shall do a good background investigation and participate carefully according to their own risk tolerance and trading of crypto currency experience."    
 }
