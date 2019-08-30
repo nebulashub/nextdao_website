@@ -148,7 +148,7 @@ const DStaking = ({ t }) => (
                 <p>{t("nax-intro-p2")}</p>
               </div>
             </div>
-            <a className="btn btn-black btn-whitepaper" target="__blank" href="#">NAX {t("whitepaper")}</a>
+            <a className="btn btn-black btn-whitepaper" target="__blank" href={t("whitepaper_url")}>NAX {t("whitepaper")}</a>
 
             <h5>{t("nax-usecase")}</h5>
             <img className="img-nax-usecase pure-img" src="/static/images/nax_usecase.png" alt="NAX usecase" />

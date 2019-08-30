@@ -92,7 +92,7 @@ const BiddingStart = ({ t }) => (
                 <label>NAX {t("intro")}</label>
                 <p>{t("intro-p")}</p>
                 <div className="pure-g">
-                    <Link href={t("whitepaper_url")}><a className="pure-u-1-2" ><img src="/static/images/bidding/book.png" />{t("whitepaper")}</a></Link>
+                    <a href={t("whitepaper_url")} className="pure-u-1-2" ><img src="/static/images/bidding/book.png" />{t("whitepaper")}</a>
                     <Link href="/"><a className="pure-u-1-2" ><img src="/static/images/bidding/web.png" />{t("official-website")}</a></Link>
                 </div>
             </div>
