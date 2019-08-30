@@ -90,6 +90,7 @@ const BiddingStart = ({ t }) => (
 
             <div className="nax-intro">
                 <label>NAX {t("intro")}</label>
+                <p>{t("intro-p")}</p>
                 <div className="pure-g">
                     <Link href={t("whitepaper_url")}><a className="pure-u-1-2" ><img src="/static/images/bidding/book.png" />{t("whitepaper")}</a></Link>
                     <Link href="/"><a className="pure-u-1-2" ><img src="/static/images/bidding/web.png" />{t("official-website")}</a></Link>
@@ -163,6 +164,11 @@ const BiddingStart = ({ t }) => (
           margin-bottom: 1rem;
         }
 
+        .nax-intro p {
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
         .nax-intro a {
           color: #1E1A33;
           text-decoration: none;
@@ -184,7 +190,13 @@ const BiddingStart = ({ t }) => (
 const BiddingRule = ({ t }) => (
     <section className="container">
         <h4>{t("bidding-rule")}</h4>
-        <p>{t("bidding-rule-p")}</p>
+        <p>{t("bidding-rule-p1")}</p>
+        <p>{t("bidding-rule-p2")}</p>
+        <p>{t("bidding-rule-p3")}</p>
+        <p>{t("bidding-rule-p4")}</p>
+        <p>{t("bidding-rule-p5")}</p>
+        <p>{t("bidding-rule-p6")}</p>
+        <p>{t("bidding-rule-p7")}</p>
 
         <h4>{t("bidding-time")}</h4>
         <p>{t("bidding-time-start")}</p>
