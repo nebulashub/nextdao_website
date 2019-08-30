@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../components/nav'
 import Subscribe from '../components/footer'
-import { withTranslation } from '../i18n';
+import { Link, withTranslation } from '../i18n';
 import '../styles/theme.scss';
 
 
@@ -11,6 +11,9 @@ const Landing = ({ t }) => (
     <h2 className="title">Smart Asset - {t('redefining-the-token-economy')} </h2>
 
     <div className="staking-method-list">
+      <Link href="/flash-nax">
+        <a className="btn btn-primary">{t("flash-token-issuance")}</a>
+      </Link>
       {/* <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">{t("wallet-staking")}</a>
       <a href="#" target="__blank" className="btn btn-outline">{t("web-staking")}</a> */}
     </div>
