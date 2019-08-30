@@ -68,12 +68,12 @@ const NextDAOIntro = ({ t }) => (
             <p>{t("nextdao-eco-feature-p")}</p>
           </section>
 
-          {/* <section className="sub-container">
+          <section className="sub-container">
             <h4 className="sub-title">
-              - nextDAO生态特点
+              - {t("nextdao-eco-feature-t2")}
             </h4>
-            <p>关注链上互动和协作，通过提供去中心化金融工具和产品，重新定义通证经济，从而通过智能资产撬动社区，发现新的业务场景，推动生态应用落地。</p>
-          </section> */}
+            <p>{t("nextdao-eco-feature-p2")}</p>
+          </section>
         </div>
         <div className="pure-u-1 pure-u-lg-1-2 eco-container">
           <img className="eco pure-img" src="/static/images/eco.png" alt="NextDAO ECO" />
