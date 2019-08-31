@@ -5,25 +5,25 @@ import Head from 'next/head'
 import '../styles/bidding.scss';
 
 const BiddingAmountDetail = ({ t }) => (
-    <section className="container">
-        <div className="card bidding-amount-detail">
-            <div className="pure-g">
-                <div className="pure-u-1-2">
-                    <label>{t("total-issue")}<br />(NAX)</label>
-                    <p>3,000,000</p>
-                </div>
-                {/* <div className="pure-u-1-3">
+  <section className="container">
+    <div className="card bidding-amount-detail">
+      <div className="pure-g">
+        <div className="pure-u-1-2">
+          <label>{t("total-issue")}<br />(NAX)</label>
+          <p>3,000,000</p>
+        </div>
+        {/* <div className="pure-u-1-3">
                     <label>{t("ready-bought")}<br />(NAS)</label>
                     <p>0</p>
                 </div> */}
-                <div className="pure-u-1-2">
-                    <label>{t("soft-top")}<br />(NAS)</label>
-                    <p>20,000</p>
-                </div>
-            </div>
+        <div className="pure-u-1-2">
+          <label>{t("soft-top")}<br />(NAS)</label>
+          <p>20,000</p>
         </div>
+      </div>
+    </div>
 
-        <style jsx>{`
+    <style jsx>{`
     .container {
       margin-top: -4.5rem;
     }
@@ -60,17 +60,17 @@ const BiddingAmountDetail = ({ t }) => (
       margin: 0.2rem 0 0 0;
     }
     `}</style>
-    </section>
+  </section>
 )
 
 const BiddingStart = ({ t }) => (
-    <section className="container">
-        <div className="card bidding-start">
-            <div className="comming-soon">
-                <h3>{t("coming-soon")}</h3>
-                <h4>{t("start-time")}</h4>
-            </div>
-            {/* <div className="bidding-progress">
+  <section className="container">
+    <div className="card bidding-start">
+      <div className="comming-soon">
+        <h3>{t("coming-soon")}</h3>
+        <h4>{t("start-time")}</h4>
+      </div>
+      {/* <div className="bidding-progress">
                 <div className="bidding-progress-text flex space-between">
                     <label>当前进度</label>
                     <p>0%</p>
@@ -88,16 +88,16 @@ const BiddingStart = ({ t }) => (
 
             </div> */}
 
-            <div className="nax-intro">
-                <label>NAX {t("intro")}</label>
-                <p>{t("intro-p")}</p>
-                <div className="pure-g">
-                    <a href={t("whitepaper_url")} className="pure-u-1-2" ><img src="/static/images/bidding/book.png" />{t("whitepaper")}</a>
-                    <Link href="/"><a className="pure-u-1-2" ><img src="/static/images/bidding/web.png" />{t("official-website")}</a></Link>
-                </div>
-            </div>
+      <div className="nax-intro">
+        <label>NAX {t("intro")}</label>
+        <p>{t("intro-p")}</p>
+        <div className="pure-g">
+          <a href={t("whitepaper_url")} target="__blank" className="pure-u-1-2" ><img src="/static/images/bidding/book.png" />{t("whitepaper")}</a>
+          <a href={t("nextdao_url")} target="__blank" className="pure-u-1-2" ><img src="/static/images/bidding/web.png" />{t("official-website")}</a>
         </div>
-        <style jsx>{`
+      </div>
+    </div>
+    <style jsx>{`
 
         .card {
           padding: 2rem;
@@ -183,37 +183,37 @@ const BiddingStart = ({ t }) => (
           margin-right: 10px;
         }
     `}
-        </style>
-    </section>
+    </style>
+  </section>
 )
 
 const BiddingRule = ({ t }) => (
-    <section className="container">
-        <h4>{t("bidding-rule")}</h4>
-        <p>{t("bidding-rule-p1")}</p>
-        <p>{t("bidding-rule-p2")}</p>
-        <p>{t("bidding-rule-p3")}</p>
-        <p>{t("bidding-rule-p4")}</p>
-        <p>{t("bidding-rule-p5")}</p>
-        <p>{t("bidding-rule-p6")}</p>
-        <p>{t("bidding-rule-p7")}</p>
+  <section className="container">
+    <h4>{t("bidding-rule")}</h4>
+    <p>{t("bidding-rule-p1")}</p>
+    <p>{t("bidding-rule-p2")}</p>
+    <p>{t("bidding-rule-p3")}</p>
+    <p>{t("bidding-rule-p4")}</p>
+    <p>{t("bidding-rule-p5")}</p>
+    <p>{t("bidding-rule-p6")}</p>
+    <p>{t("bidding-rule-p7")}</p>
 
-        <h4>{t("bidding-time")}</h4>
-        <p>{t("bidding-time-start")}</p>
-        <p>{t("bidding-time-end")}</p>
-        <p>{t("bidding-time-distribution")}</p>
+    <h4>{t("bidding-time")}</h4>
+    <p>{t("bidding-time-start")}</p>
+    <p>{t("bidding-time-end")}</p>
+    <p>{t("bidding-time-distribution")}</p>
 
-        <h4>{t("calc-formula")}</h4>
-        <p>{t("calc-formula-p1")}</p>
-        <p>{t("calc-formula-p2")}</p>
-        <p>{t("calc-formula-p3")}</p>
-        <p>{t("calc-formula-p4")}</p>
+    <h4>{t("calc-formula")}</h4>
+    <p>{t("calc-formula-p1")}</p>
+    <p>{t("calc-formula-p2")}</p>
+    <p>{t("calc-formula-p3")}</p>
+    <p>{t("calc-formula-p4")}</p>
 
-        <h4>{t("risk-warning")}</h4>
-        <p>{t("risk-warning-p1")}</p>
-        <p>{t("risk-warning-p2")}</p>
+    <h4>{t("risk-warning")}</h4>
+    <p>{t("risk-warning-p1")}</p>
+    <p>{t("risk-warning-p2")}</p>
 
-        <style jsx>{`
+    <style jsx>{`
       .container {
         padding: 0 2.5rem 2.5rem;
       }
@@ -237,14 +237,14 @@ const BiddingRule = ({ t }) => (
 
 
     `}</style>
-    </section>
+  </section>
 )
 
 const Footer = () => (
-    <footer>
-        <span>Power By <img src="/static/images/logo_black.png" alt="nextDAO" /></span>
-        <style jsx>
-            {`
+  <footer>
+    <span>Power By <img src="/static/images/logo_black.png" alt="nextDAO" /></span>
+    <style jsx>
+      {`
             footer {
                 border-top: 1px solid #DFDEE6;
                 margin: 1rem 2rem;
@@ -262,31 +262,31 @@ const Footer = () => (
                 margin-left: 0.5rem;
             }
         `}
-        </style>
-    </footer>
+    </style>
+  </footer>
 )
 
 const Bidding = (props) => (
-    <>
-        <Head>
-            <title>{props.t("title")}</title>
-            <link rel="shortcut icon" href="/static/nax.ico" type="image/x-icon" />
-            <link rel="icon" href="/static/nax.ico" type="image/x-icon"></link>
-        </Head>
-        <div className="bidding">
+  <>
+    <Head>
+      <title>{props.t("title")}</title>
+      <link rel="shortcut icon" href="/static/nax.ico" type="image/x-icon" />
+      <link rel="icon" href="/static/nax.ico" type="image/x-icon"></link>
+    </Head>
+    <div className="bidding">
 
-            <Banner {...props} />
-            <BiddingAmountDetail {...props} />
-            <BiddingStart {...props} />
-            <BiddingRule {...props} />
-            <Footer />
+      <Banner {...props} />
+      <BiddingAmountDetail {...props} />
+      <BiddingStart {...props} />
+      <BiddingRule {...props} />
+      <Footer />
 
-        </div>
-    </>
+    </div>
+  </>
 )
 
 Bidding.getInitialProps = async () => ({
-    namespacesRequired: ['bidding'],
+  namespacesRequired: ['bidding'],
 })
 
 export default withTranslation('bidding')(Bidding);
