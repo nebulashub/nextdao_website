@@ -161,7 +161,7 @@ const DStaking = ({ t }) => (
         </div>
 
 
-        <a className="link" target="__blank" href="#">Explorer ></a>
+        {/* <a className="link" target="__blank" href="#">Explorer ></a> */}
         {/* 
         <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">{t("wallet-staking")}</a>
         <a href="#" target="__blank" className="btn btn-outline black">{t("web-staking")}</a> 
@@ -275,7 +275,7 @@ const Nebulas = ({ t }) => (
       <p>
         {t("nebulas-intro")}
       </p>
-      <a className="link" href="#" target="__blank">Nebulas ></a>
+      <a className="link" href={t("nebulas_url")} target="__blank">Nebulas ></a>
     </section>
     <style jsx>{`
       .nebulas {
