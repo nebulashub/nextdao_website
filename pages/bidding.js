@@ -3,6 +3,10 @@ import { Link, withTranslation } from '../i18n';
 import Banner from '../components/bidding/banner';
 import Head from 'next/head'
 import '../styles/bidding.scss';
+import Countdown from '../components/bidding/countdown';
+import Progress from '../components/bidding/progress';
+import { BIDDING_SOFT_TOP_AMOUNT, BIDDING_NAX_DISTRIBUTION_AMOUNT } from '../config/bidding';
+import { STAGE_NOT_START, getBiddingStage } from "../utils/bidding";
 
 const BiddingAmountDetail = ({ t }) => (
   <section className="container">
@@ -10,7 +14,7 @@ const BiddingAmountDetail = ({ t }) => (
       <div className="pure-g">
         <div className="pure-u-1-2">
           <label>{t("total-issue")}<br />(NAX)</label>
-          <p>3,000,000</p>
+          <p>{BIDDING_NAX_DISTRIBUTION_AMOUNT.toLocaleString()}</p>
         </div>
         {/* <div className="pure-u-1-3">
                     <label>{t("ready-bought")}<br />(NAS)</label>
@@ -18,7 +22,7 @@ const BiddingAmountDetail = ({ t }) => (
                 </div> */}
         <div className="pure-u-1-2">
           <label>{t("soft-top")}<br />(NAS)</label>
-          <p>20,000</p>
+          <p>{BIDDING_SOFT_TOP_AMOUNT.toLocaleString()}</p>
         </div>
       </div>
     </div>
@@ -66,27 +70,25 @@ const BiddingAmountDetail = ({ t }) => (
 const BiddingStart = ({ t }) => (
   <section className="container">
     <div className="card bidding-start">
-      <div className="comming-soon">
-        <h3>{t("coming-soon")}</h3>
-        <h4>{t("start-time")}</h4>
+
+
+      {getBiddingStage() === STAGE_NOT_START &&
+        <div className="comming-soon">
+          <h3>{t("coming-soon")}</h3>
+          <h4>{t("start-time")}</h4>
+        </div>
+      }
+
+      {getBiddingStage() !== STAGE_NOT_START &&
+        <>
+          <Progress />
+          <Countdown />
+        </>
+      }
+
+      <div className="bidding-now">
+
       </div>
-      {/* <div className="bidding-progress">
-                <div className="bidding-progress-text flex space-between">
-                    <label>当前进度</label>
-                    <p>0%</p>
-                </div>
-                <div className="bidding-progress-bar">
-                </div>
-            </div>
-
-            <div className="bidding-time flex space-between">
-                <label>剩余时间</label>
-                <p>12 时 00 分 29 秒 <span>2019年9月4日15:00 utc+8结束</span></p>
-            </div>
-
-            <div className="bidding-now">
-
-            </div> */}
 
       <div className="nax-intro">
         <label>NAX {t("intro")}</label>
@@ -134,26 +136,6 @@ const BiddingStart = ({ t }) => (
         .comming-soon h4 {
             font-size: 1rem;
             font-weight: 500;
-        }
-
-        .bidding-progress {
-          padding: 1rem 0;
-        }
-
-        .bidding-time {
-          padding: 1rem 0;
-          align-items: center;
-        }
-
-        .bidding-time p {
-          text-align: right;
-        }
-
-        .bidding-time p>span {
-          display: block;
-          font-size: 0.8rem;
-          font-weight:400;
-          color:#A8A6B3;
         }
 
         .nax-intro {
