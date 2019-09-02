@@ -59,7 +59,7 @@ function Buy({ t }) {
                 <button disabled={false} onClick={onPayClick} >{t("pay")}</button>
                 {qrcodeText &&
                     <div className="qrcode-wrapper">
-                        <QRcode size={200} value={qrcodeText} />
+                        <QRcode size={250} value={qrcodeText} />
                         <p><input type="text" value={BIDDING_CONTRACT} onClick={onCopyContractClick} onChange={() => false} /></p>
                         {copyToClipboard && <p><span className="tips">{t('copy-to-clipboard')}</span></p>}
                         <p><label>{t("pay-amount")}</label> <span>{payAmountClick} NAS</span></p>

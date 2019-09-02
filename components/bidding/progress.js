@@ -27,7 +27,7 @@ function Progress(props) {
                     <p>{progress_num}% </p>
                 </div>
                 <div className="bidding-progress-bar bar">
-                    <span style={{ width: `${progress_num}%` }} className={`${progressBarStyle()} bar`}></span>
+                    <span style={{ width: `${progress_num > 100 ? 100 : progress_num}%` }} className={`${progressBarStyle()} bar`}></span>
                 </div>
             </div>
             <style jsx>

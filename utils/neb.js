@@ -49,22 +49,22 @@ class Neb {
     }
 
     static generatePayQRcode = (to, payAmount) => {
-
         // default transfer 0 nas, staking all remain nas
         const qrcodeData = {
             pageParams: {
                 pay: {
                     currency: "NAS",
-                    value: nebulas.Unit.nasToBasic(payAmount),
+                    value: nebulas.Unit.nasToBasic(payAmount).toString(10),
                     to: to
-                }
+                },
+                innerPay: false
             },
             des: "confirmTransfer",
             category: "jump"
         };
 
         const qrcodeText = JSON.stringify(qrcodeData);
-        console.log(qrcodeText);
+        // console.log(qrcodeText);
         return qrcodeText;
     }
 
