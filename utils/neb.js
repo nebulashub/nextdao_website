@@ -1,5 +1,6 @@
 import nebulas from 'nebulas';
-import { NEBNET, CHAIN_ID } from '../config/neb';
+import { NEBNET } from '../config/neb';
+
 
 class Neb {
     constructor() {
@@ -47,41 +48,22 @@ class Neb {
         return nebulas.Account.isValidAddress(address);
     }
 
-    static generateQrcode = (stakingSelect, stakingAmount, stakingFrom = "nas-nano") => {
-
-        const staking_proxy_contract = process.env.REACT_APP_STAKING_PROXY_CONTRACT;
-
-        const actions = ["cancel", "staking"];
-        let value;
-        if (stakingSelect === "1") { // staking
-            value = nebulas.Unit.nasToBasic(stakingAmount);
-        } else { // cancel staking
-            value = ""
-        }
+    static generatePayQRcode = (to, payAmount) => {
 
         // default transfer 0 nas, staking all remain nas
         const qrcodeData = {
             pageParams: {
                 pay: {
                     currency: "NAS",
-                    value: 0,
-                    to: staking_proxy_contract,
+                    value: nebulas.Unit.nasToBasic(payAmount),
+                    to: to
                 }
             },
             des: "confirmTransfer",
             category: "jump"
         };
 
-        if (stakingFrom === "nas-nano") {
-            qrcodeData.pageParams.pay.payload = {
-                "function": actions[parseInt(stakingSelect)],
-                "args": `[${value}]`,
-                type: "call"
-            };
-        }
-
         const qrcodeText = JSON.stringify(qrcodeData);
-
         console.log(qrcodeText);
         return qrcodeText;
     }

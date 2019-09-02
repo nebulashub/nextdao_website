@@ -9,6 +9,8 @@
     "end-time": "2019年9月3日15:00（UTC+8）",
     "to-start": "距离开始",
     "to-end": "剩余时间",
+    "already-end": "已结束",
+    "already-end-p": "约一个月之后分发NAX",
     "intro": "介绍",
     "intro-p": "NAX是基于星云PoD的贡献证明的理念，以dStaking的形式产生的，它不仅是星云体系下的staking coin，还是在星云生态上Token Economy的重新定义。它将用于推动星云的生态发展，甚至推动整个星云Token Economy的发展。",
     "whitepaper": "NAX白皮书",
@@ -37,5 +39,10 @@
     "risk-warning-p2": "2.NAX作为创新性数字资产，价格会随着市场流通情况出现涨跌波动，请用户做好充分的背景调查后根据自身承受风险程度以及交易数字货币经验谨慎参与。",
     "h": "小时",
     "m": "分钟",
-    "s": "秒"
+    "s": "秒",
+    "pay-amount-error": "认购数量不符合参与额度",
+    "pay-placeholder": "输入参与额度，最小5NAS",
+    "pay": "秒杀",
+    "pay-amount": "转账金额",
+    "use-nas-nano-scan-qrcode": "请使用NAS nano扫码转账"
 }

@@ -24,10 +24,20 @@ function getTotalBidding() {
     return neb.callContract(BIDDING_CONTRACT, "getTotal");
 }
 
+function genQRcode(payAmount) {
+    return Neb.generatePayQRcode(BIDDING_CONTRACT, payAmount);
+}
+
+function isInteger(value) {
+    return value == parseInt(value, 10);
+}
+
 export {
     STAGE_NOT_START,
     STAGE_START,
     STAGE_END,
     getBiddingStage,
-    getTotalBidding
+    getTotalBidding,
+    genQRcode,
+    isInteger
 };

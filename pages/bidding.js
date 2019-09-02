@@ -5,8 +5,9 @@ import Head from 'next/head'
 import '../styles/bidding.scss';
 import Countdown from '../components/bidding/countdown';
 import Progress from '../components/bidding/progress';
+import Buy from '../components/bidding/buy';
 import { BIDDING_SOFT_TOP_AMOUNT, BIDDING_NAX_DISTRIBUTION_AMOUNT } from '../config/bidding';
-import { STAGE_NOT_START, getBiddingStage, getTotalBidding } from "../utils/bidding";
+import { STAGE_NOT_START, STAGE_START, getBiddingStage, getTotalBidding } from "../utils/bidding";
 import { Neb } from '../utils/neb';
 
 const BiddingAmountDetail = ({ t, boughtAmount }) => (
@@ -87,9 +88,13 @@ const BiddingStart = ({ t, boughtAmount }) => (
         </>
       }
 
-      <div className="bidding-now">
+      {getBiddingStage() === STAGE_START &&
+        <>
+          <Buy />
+        </>
+      }
 
-      </div>
+
 
       <div className="nax-intro">
         <label>NAX {t("intro")}</label>

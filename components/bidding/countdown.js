@@ -7,7 +7,7 @@ import { STAGE_NOT_START, STAGE_START, STAGE_END, getBiddingStage } from "../../
 function Countdown({ t }) {
 
     // Random component
-    const Completionist = () => <span>You are good to go!</span>;
+    const Completionist = () => <span>{t("already-end-p")}</span>;
 
     // Renderer callback with condition
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -38,6 +38,7 @@ function Countdown({ t }) {
             break;
         case STAGE_END:
             // bidding end
+            time_label = t("already-end");
             countdown_time = BIDDING_END_TIME;
             break;
         default:
@@ -70,7 +71,7 @@ function Countdown({ t }) {
                   }
           
                 .bidding-time p {
-                text-align: right;
+                    text-align: right;
                 }
         
                 .bidding-time p>span {

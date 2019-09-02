@@ -41,7 +41,11 @@ function Progress(props) {
                     }
 
                     .bidding-progress {
-                        padding: 1rem 0;
+                        padding: 0;
+                    }
+
+                    .bidding-progress-text {
+                        align-items: baseline;
                     }
 
                     .bar {
