@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withTranslation } from '../../i18n';
 import { BIDDING_SOFT_TOP_AMOUNT } from '../../config/bidding';
 
-function Progress({ t }) {
 
-    // get already bought amount from smart contract
-    let boughtAmount = 5015;
+
+function Progress(props) {
+
+    const { t } = props;
+    const [boughtAmount, setBoughtAmount] = useState(0);
+
+    useEffect(() => {
+        setBoughtAmount(props.boughtAmount);
+    });
 
     // caculate bidding progress, already bought amount/ soft top
     let progress_num = ((boughtAmount / BIDDING_SOFT_TOP_AMOUNT) * 100).toFixed(1);
 
     const progressBarStyle = () => progress_num < 100 ? 'not-finish' : 'finish';
 
+
     return (
         <>
             <div className="bidding-progress">
                 <div className="bidding-progress-text flex space-between">
                     <label>{t("current-progress")}</label>
-                    <p>{progress_num}%</p>
+                    <p>{progress_num}% </p>
                 </div>
                 <div className="bidding-progress-bar bar">
                     <span style={{ width: `${progress_num}%` }} className={`${progressBarStyle()} bar`}></span>
@@ -61,6 +68,7 @@ function Progress({ t }) {
             </style>
         </>
     );
+
 }
 
 Progress.getInitialProps = async () => ({

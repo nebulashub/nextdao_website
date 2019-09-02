@@ -1,4 +1,6 @@
-import { BIDDING_START_TIME, BIDDING_END_TIME } from '../config/bidding';
+import { BIDDING_START_TIME, BIDDING_END_TIME, BIDDING_CONTRACT } from '../config/bidding';
+import { Neb } from './neb';
+
 const STAGE_NOT_START = "not-start";
 const STAGE_START = "start";
 const STAGE_END = "end";
@@ -17,9 +19,15 @@ const getBiddingStage = () => {
     }
 }
 
+function getTotalBidding() {
+    const neb = new Neb();
+    return neb.callContract(BIDDING_CONTRACT, "getTotal");
+}
+
 export {
     STAGE_NOT_START,
     STAGE_START,
     STAGE_END,
-    getBiddingStage
+    getBiddingStage,
+    getTotalBidding
 };

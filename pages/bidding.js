@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link, withTranslation } from '../i18n';
 import Banner from '../components/bidding/banner';
 import Head from 'next/head'
@@ -6,21 +6,22 @@ import '../styles/bidding.scss';
 import Countdown from '../components/bidding/countdown';
 import Progress from '../components/bidding/progress';
 import { BIDDING_SOFT_TOP_AMOUNT, BIDDING_NAX_DISTRIBUTION_AMOUNT } from '../config/bidding';
-import { STAGE_NOT_START, getBiddingStage } from "../utils/bidding";
+import { STAGE_NOT_START, getBiddingStage, getTotalBidding } from "../utils/bidding";
+import { Neb } from '../utils/neb';
 
-const BiddingAmountDetail = ({ t }) => (
+const BiddingAmountDetail = ({ t, boughtAmount }) => (
   <section className="container">
     <div className="card bidding-amount-detail">
       <div className="pure-g">
-        <div className="pure-u-1-2">
+        <div className="pure-u-1-3">
           <label>{t("total-issue")}<br />(NAX)</label>
           <p>{BIDDING_NAX_DISTRIBUTION_AMOUNT.toLocaleString()}</p>
         </div>
-        {/* <div className="pure-u-1-3">
-                    <label>{t("ready-bought")}<br />(NAS)</label>
-                    <p>0</p>
-                </div> */}
-        <div className="pure-u-1-2">
+        <div className="pure-u-1-3">
+          <label>{t("ready-bought")}<br />(NAS)</label>
+          <p>{boughtAmount}</p>
+        </div>
+        <div className="pure-u-1-3">
           <label>{t("soft-top")}<br />(NAS)</label>
           <p>{BIDDING_SOFT_TOP_AMOUNT.toLocaleString()}</p>
         </div>
@@ -67,7 +68,7 @@ const BiddingAmountDetail = ({ t }) => (
   </section>
 )
 
-const BiddingStart = ({ t }) => (
+const BiddingStart = ({ t, boughtAmount }) => (
   <section className="container">
     <div className="card bidding-start">
 
@@ -81,7 +82,7 @@ const BiddingStart = ({ t }) => (
 
       {getBiddingStage() !== STAGE_NOT_START &&
         <>
-          <Progress />
+          <Progress boughtAmount={boughtAmount} />
           <Countdown />
         </>
       }
@@ -224,7 +225,7 @@ const BiddingRule = ({ t }) => (
 
 const Footer = () => (
   <footer>
-    <span>Power By <img src="/static/images/logo_black.png" alt="nextDAO" /></span>
+    <span>Powered By <img src="/static/images/logo_black.png" alt="nextDAO" /></span>
     <style jsx>
       {`
             footer {
@@ -248,25 +249,51 @@ const Footer = () => (
   </footer>
 )
 
-const Bidding = (props) => (
-  <>
-    <Head>
-      <title>{props.t("title")}</title>
-      <link rel="shortcut icon" href="/static/nax.ico" type="image/x-icon" />
-      <link rel="icon" href="/static/nax.ico" type="image/x-icon"></link>
-    </Head>
-    <div className="bidding">
+class Bidding extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      boughtAmount: 0
+    };
+  }
 
-      <Banner {...props} />
-      <BiddingAmountDetail {...props} />
-      <BiddingStart {...props} />
-      <BiddingRule {...props} />
-      <Footer />
 
-    </div>
-  </>
-)
+  componentDidMount = async () => {
 
+    // get already bought amount from smart contract
+    const total = await getTotalBidding();
+    this.setState({
+      boughtAmount: Neb.toNas(total)
+    });
+  }
+
+
+  render() {
+    const { t } = this.props;
+    const { boughtAmount } = this.state;
+
+
+    return (
+      <>
+        <Head>
+          <title>{t("title")}</title>
+          <link rel="shortcut icon" href="/static/nax.ico" type="image/x-icon" />
+          <link rel="icon" href="/static/nax.ico" type="image/x-icon"></link>
+        </Head>
+        <div className="bidding">
+
+          <Banner {...this.props} />
+          <BiddingAmountDetail boughtAmount={boughtAmount} {...this.props} />
+          <BiddingStart boughtAmount={boughtAmount} {...this.props} />
+          <BiddingRule {...this.props} />
+          <Footer />
+
+        </div>
+      </>
+    );
+
+  }
+}
 Bidding.getInitialProps = async () => ({
   namespacesRequired: ['bidding'],
 })
