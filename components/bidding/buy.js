@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { withTranslation } from '../../i18n';
 import QRcode from 'qrcode.react';
 import { genQRcode, isInteger } from '../../utils/bidding';
-import { BIDDING_MIN_AMOUNT, BIDDING_CONTRACT } from '../../config/bidding';
+import { BIDDING_MIN_AMOUNT, BIDDING_CONTRACT, BIDDING_NASNANO_PREFIX } from '../../config/bidding';
+import copy from 'copy-to-clipboard';
 
 function Buy({ t }) {
 
@@ -10,8 +11,9 @@ function Buy({ t }) {
     const [payAmountError, setPayAmountError] = useState(false);
     const [payAmountClick, setPayAmountClick] = useState(0);
     const [qrcodeText, setQrcodeText] = useState(null);
+    const [copyToClipboard, setCopyToClipboard] = useState(false);
 
-    const OnInputChange = (e) => {
+    const onInputChange = (e) => {
 
         let value = e.target.value;
         // setPayAmount(value)
@@ -26,39 +28,40 @@ function Buy({ t }) {
 
     }
 
-    const OnPayClick = (e) => {
-
+    const onPayClick = () => {
 
         if (parseInt(payAmount) >= BIDDING_MIN_AMOUNT) {
             setPayAmountClick(parseInt(payAmount))
             setQrcodeText(genQRcode(payAmountClick));
 
             // open nas nano
-            const nasnano_url = `openapp.nasnano://virtual?params=${encodeURIComponent(qrcodeText)}`;
+            const nasnano_url = `${BIDDING_NASNANO_PREFIX}://virtual?params=${encodeURIComponent(qrcodeText)}`;
             window.location = nasnano_url;
 
         } else {
             // hide qrcode
             setQrcodeText(null);
-
             // show input error
             setPayAmountError(true);
-
         }
+    }
 
-
+    const onCopyContractClick = () => {
+        copy(BIDDING_CONTRACT);
+        setCopyToClipboard(true);
     }
 
     return (
         <>
             <div className="bidding-now">
-                <input type="text" className={payAmountError ? "error" : ""} placeholder={t("pay-placeholder")} onChange={OnInputChange} value={payAmount} />
+                <input type="text" className={payAmountError ? "error" : ""} placeholder={t("pay-placeholder")} onChange={onInputChange} value={payAmount} />
                 {payAmountError && <span className="error">{t("pay-amount-error")}</span>}
-                <button disabled={false} onClick={OnPayClick} >{t("pay")}</button>
+                <button disabled={false} onClick={onPayClick} >{t("pay")}</button>
                 {qrcodeText &&
                     <div className="qrcode-wrapper">
-                        <QRcode size={250} value={qrcodeText} />
-                        <p><input type="text" defaultValue={BIDDING_CONTRACT} /></p>
+                        <QRcode size={200} value={qrcodeText} />
+                        <p><input type="text" value={BIDDING_CONTRACT} onClick={onCopyContractClick} onChange={() => false} /></p>
+                        {copyToClipboard && <p><span className="tips">{t('copy-to-clipboard')}</span></p>}
                         <p><label>{t("pay-amount")}</label> <span>{payAmountClick} NAS</span></p>
                         <p><label>{t("use-nas-nano-scan-qrcode")}</label></p>
                     </div>
@@ -140,6 +143,11 @@ function Buy({ t }) {
 
                 .qrcode-wrapper p span {
                     color: #FF9D25;
+                    font-size: 0.8rem;
+                }
+
+                .qrcode-wrapper p span.tips {
+                    color: #A8A6B3;
                 }
 
             `}

@@ -44,5 +44,6 @@
     "pay-placeholder": "输入参与额度，最小5NAS",
     "pay": "秒杀",
     "pay-amount": "转账金额",
-    "use-nas-nano-scan-qrcode": "请使用NAS nano扫码转账"
+    "use-nas-nano-scan-qrcode": "请使用NAS nano扫码转账",
+    "copy-to-clipboard": "已复制到剪贴板"
 }
