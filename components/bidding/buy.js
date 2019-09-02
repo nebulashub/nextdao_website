@@ -7,7 +7,7 @@ import copy from 'copy-to-clipboard';
 
 function Buy({ t }) {
 
-    const [payAmount, setPayAmount] = useState(BIDDING_MIN_AMOUNT);
+    const [payAmount, setPayAmount] = useState();
     const [payAmountError, setPayAmountError] = useState(false);
     const [payAmountClick, setPayAmountClick] = useState(0);
     const [qrcodeText, setQrcodeText] = useState(null);
@@ -32,10 +32,10 @@ function Buy({ t }) {
 
         if (parseInt(payAmount) >= BIDDING_MIN_AMOUNT) {
             setPayAmountClick(parseInt(payAmount))
-            setQrcodeText(genQRcode(payAmountClick));
+            setQrcodeText(genQRcode(payAmount));
 
             // open nas nano
-            const nasnano_url = `${BIDDING_NASNANO_PREFIX}://virtual?params=${encodeURIComponent(qrcodeText)}`;
+            const nasnano_url = `${BIDDING_NASNANO_PREFIX}://virtual?params=${encodeURIComponent(genQRcode(payAmount))}`;
             window.location = nasnano_url;
 
         } else {
@@ -124,6 +124,8 @@ function Buy({ t }) {
                     box-shadow:0rem 1.67rem 5rem 0rem rgba(134,141,167,0.2);
                     border:0.1rem solid rgba(230,231,235,1);
                     border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 .qrcode-wrapper p {
@@ -132,9 +134,9 @@ function Buy({ t }) {
                 }
 
                 .qrcode-wrapper input {
-                    padding: 0.2rem 0.6rem;
-                    font-size: 0.9rem;
-                    width: 250px;
+                    padding: 0.2rem;
+                    font-size: 0.8rem;
+                    width: 100%;
                 }
 
                 .qrcode-wrapper label {
