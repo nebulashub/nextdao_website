@@ -264,12 +264,17 @@ class Bidding extends Component {
 
   componentDidMount = async () => {
 
-    // get already bought amount from smart contract
-    const total = await getTotalBidding();
-
-    this.setState({
-      boughtAmount: Neb.toNas(total)
-    });
+    let total = 0;
+    try {
+      // get already bought amount from smart contract
+      total = await getTotalBidding();
+    } catch (err) {
+      console.log(err)
+    } finally {
+      this.setState({
+        boughtAmount: Neb.toNas(total)
+      });
+    }
 
   }
 

@@ -6,7 +6,6 @@ import { STAGE_NOT_START, STAGE_START, STAGE_END, getBiddingStage } from "../../
 
 function Countdown({ t }) {
 
-
     // Random component
     const Completionist = () => <span>{t("already-end-p")}</span>;
 

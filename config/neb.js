@@ -1,4 +1,4 @@
-const NEBNET = 'https://testnet.nebulas.io';
+const NEBNET = 'https://mainnet.nebulas.io';
 const CHAIN_ID = 1001;
 
 export {
