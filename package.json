@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "NODE_ENV=dev node server.js",
     "build": "next build",
     "export": "yarn build && next export",
-    "start": "NODE_ENV=production node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",

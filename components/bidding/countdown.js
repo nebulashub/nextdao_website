@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CountdownNow from 'react-countdown-now';
 import { withTranslation } from '../../i18n';
 import { BIDDING_START_TIME, BIDDING_END_TIME } from '../../config/bidding';
 import { STAGE_NOT_START, STAGE_START, STAGE_END, getBiddingStage } from "../../utils/bidding";
 
-function Countdown({ t, nowOffset }) {
+function Countdown({ t }) {
 
 
     // Random component
@@ -21,18 +21,18 @@ function Countdown({ t, nowOffset }) {
         }
     };
 
-    const [timeOffset, setTimeOffset] = useState(0);
+    // const [timeOffset, setTimeOffset] = useState(0);
 
-    useEffect(() => {
-        if (nowOffset) {
-            setTimeOffset(nowOffset);
-        }
-    });
+    // useEffect(() => {
+    //     if (nowOffset) {
+    //         setTimeOffset(nowOffset);
+    //     }
+    // });
 
-    const nowTime = () => {
-        // console.log('timeOffset', timeOffset);
-        return Date.now() - timeOffset;
-    }
+    // const nowTime = () => {
+    //     console.log('timeOffset', timeOffset);
+    //     return Date.now() - timeOffset;
+    // }
 
     let time_label, countdown_time, abs_time;
     const bidding_stage = getBiddingStage();
@@ -65,7 +65,6 @@ function Countdown({ t, nowOffset }) {
             <label>{time_label}</label>
             <p>
                 <CountdownNow
-                    now={nowTime}
                     date={countdown_time}
                     renderer={renderer}
                 />
