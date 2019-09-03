@@ -33,7 +33,6 @@ function Buy({ t }) {
         if (parseInt(payAmount) >= BIDDING_MIN_AMOUNT) {
             setPayAmountClick(parseInt(payAmount))
             setQrcodeText(genQRcode(payAmount));
-
             // open nas nano
             const nasnano_url = `${BIDDING_NASNANO_PREFIX}://virtual?params=${encodeURIComponent(genQRcode(payAmount))}`;
             window.location = nasnano_url;

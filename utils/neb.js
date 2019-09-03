@@ -55,7 +55,10 @@ class Neb {
                 pay: {
                     currency: "NAS",
                     value: nebulas.Unit.nasToBasic(payAmount).toString(10),
-                    to: to
+                    to: to,
+                    payload: {
+                        type: "binary"
+                    }
                 },
                 innerPay: false
             },
