@@ -11,13 +11,13 @@ const handle = app.getRequestHandler();
 
 (async () => {
     await app.prepare()
-    const server = express()
+    const server = express();
 
-    server.use(nextI18NextMiddleware(nextI18next))
+    server.use(nextI18NextMiddleware(nextI18next));
 
     server.get('*', (req, res) => {
-        const parsedUrl = parse(req.url, true)
-        const { pathname, query } = parsedUrl
+        const parsedUrl = parse(req.url, true);
+        const { pathname, query } = parsedUrl;
 
         if (pathname === '/flash-nax') {
             app.render(req, res, '/bidding', query)
@@ -25,8 +25,7 @@ const handle = app.getRequestHandler();
             handle(req, res, parsedUrl)
         }
 
-        // handle(req, res)
-    })
+    });
 
     await server.listen(port)
     console.log(`> Ready on http://localhost:${port}`) // eslint-disable-line no-console

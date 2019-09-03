@@ -1,7 +1,7 @@
 import moment from 'moment';
 
-const BIDDING_START_TIME = moment("2019-09-01 13:00:00+08").valueOf();
-const BIDDING_END_TIME = moment("2019-09-03 15:00:00+08").valueOf();
+const BIDDING_START_TIME = moment("2019-09-02 20:41:00+08").valueOf();
+const BIDDING_END_TIME = moment("2019-09-03 20:45:00+08").valueOf();
 const BIDDING_MIN_AMOUNT = 5;
 const BIDDING_SOFT_TOP_AMOUNT = 200;
 const BIDDING_NAX_DISTRIBUTION_AMOUNT = 3000000;

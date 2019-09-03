@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CountdownNow from 'react-countdown-now';
 import { withTranslation } from '../../i18n';
 import { BIDDING_START_TIME, BIDDING_END_TIME } from '../../config/bidding';
 import { STAGE_NOT_START, STAGE_START, STAGE_END, getBiddingStage } from "../../utils/bidding";
 
-function Countdown({ t }) {
+function Countdown({ t, serverTime }) {
+
 
     // Random component
     const Completionist = () => <span>{t("already-end-p")}</span>;
@@ -19,6 +20,16 @@ function Countdown({ t }) {
             return <span>{days * 24 + hours} {t('h')} {minutes} {t('m')} {seconds} {t('s')}</span>;
         }
     };
+
+    const [now, setNow] = useState(Date.now());
+
+    useEffect(() => {
+        setNow(serverTime);
+    });
+
+    const nowTime = () => {
+        return now;
+    }
 
     let time_label, countdown_time, abs_time;
     const bidding_stage = getBiddingStage();
@@ -51,6 +62,7 @@ function Countdown({ t }) {
             <label>{time_label}</label>
             <p>
                 <CountdownNow
+                    now={nowTime}
                     date={countdown_time}
                     renderer={renderer}
                 />
@@ -84,8 +96,14 @@ function Countdown({ t }) {
         </div>)
 }
 
-Countdown.getInitialProps = async () => ({
-    namespacesRequired: ['bidding'],
-});
+Countdown.getInitialProps = async ({ req }) => {
+
+
+
+    return {
+        namespacesRequired: ['bidding']
+    };
+
+};
 
 export default withTranslation('bidding')(Countdown);

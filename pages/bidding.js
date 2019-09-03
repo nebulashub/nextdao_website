@@ -69,7 +69,7 @@ const BiddingAmountDetail = ({ t, boughtAmount }) => (
   </section>
 )
 
-const BiddingStart = ({ t, boughtAmount }) => (
+const BiddingStart = ({ t, boughtAmount, serverTime }) => (
   <section className="container">
     <div className="card bidding-start">
 
@@ -84,7 +84,7 @@ const BiddingStart = ({ t, boughtAmount }) => (
       {getBiddingStage() !== STAGE_NOT_START &&
         <>
           <Progress boughtAmount={boughtAmount} />
-          <Countdown />
+          <Countdown serverTime={serverTime} />
         </>
       }
 
@@ -267,15 +267,31 @@ class Bidding extends Component {
 
     // get already bought amount from smart contract
     const total = await getTotalBidding();
-    this.setState({
-      boughtAmount: Neb.toNas(total)
-    });
+
+    let now = Date.now();
+    try {
+      const result = await fetch(
+        'https://api.huobi.pro/v1/common/timestamp',
+      );
+
+      const json = await result.json();
+      // console.log(json);
+      now = json.data;
+    } catch (err) {
+      console.log(err);
+    } finally {
+      this.setState({
+        serverTime: now,
+        boughtAmount: Neb.toNas(total)
+      });
+    }
+
   }
 
 
   render() {
     const { t } = this.props;
-    const { boughtAmount } = this.state;
+    const { boughtAmount, serverTime } = this.state;
 
 
     return (
@@ -289,7 +305,7 @@ class Bidding extends Component {
 
           <Banner {...this.props} />
           <BiddingAmountDetail boughtAmount={boughtAmount} {...this.props} />
-          <BiddingStart boughtAmount={boughtAmount} {...this.props} />
+          <BiddingStart serverTime={serverTime} boughtAmount={boughtAmount} {...this.props} />
           <BiddingRule {...this.props} />
           <Footer />
 
