@@ -12,7 +12,7 @@ class Neb {
     callContract(to_contract, func, args = []) {
         return new Promise((resolve, reject) => {
             this.neb.api.call({
-                from: "n1UiVK8ZPsJ44QNTtHTP4z2MLWbN3DqahRF",
+                from: "n1EoNsJNXG1tN3z9rvjwPKoBXbJMqAjmESC",
                 to: to_contract,
                 value: 0,
                 nonce: 0,

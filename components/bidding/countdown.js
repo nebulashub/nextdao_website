@@ -99,8 +99,6 @@ function Countdown({ t }) {
 
 Countdown.getInitialProps = async ({ req }) => {
 
-
-
     return {
         namespacesRequired: ['bidding']
     };

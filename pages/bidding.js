@@ -20,7 +20,7 @@ const BiddingAmountDetail = ({ t, boughtAmount }) => (
         </div>
         <div className="pure-u-1-3">
           <label>{t("ready-bought")}<br />(NAS)</label>
-          <p>{boughtAmount}</p>
+          <p>{boughtAmount.toLocaleString()}</p>
         </div>
         <div className="pure-u-1-3">
           <label>{t("soft-top")}<br />(NAS)</label>
