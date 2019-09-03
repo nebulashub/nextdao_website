@@ -69,7 +69,7 @@ const BiddingAmountDetail = ({ t, boughtAmount }) => (
   </section>
 )
 
-const BiddingStart = ({ t, boughtAmount, serverTime }) => (
+const BiddingStart = ({ t, boughtAmount, nowOffset }) => (
   <section className="container">
     <div className="card bidding-start">
 
@@ -84,7 +84,7 @@ const BiddingStart = ({ t, boughtAmount, serverTime }) => (
       {getBiddingStage() !== STAGE_NOT_START &&
         <>
           <Progress boughtAmount={boughtAmount} />
-          <Countdown serverTime={serverTime} />
+          <Countdown nowOffset={nowOffset} />
         </>
       }
 
@@ -269,6 +269,7 @@ class Bidding extends Component {
     const total = await getTotalBidding();
 
     let now = Date.now();
+    let serverTime = Date.now();
     try {
       const result = await fetch(
         'https://api.huobi.pro/v1/common/timestamp',
@@ -276,12 +277,14 @@ class Bidding extends Component {
 
       const json = await result.json();
       // console.log(json);
-      now = json.data;
+      serverTime = json.data;
     } catch (err) {
       console.log(err);
     } finally {
+      const nowOffset = now - serverTime;
+      // console.log('bidding', nowOffset)
       this.setState({
-        serverTime: now,
+        nowOffset,
         boughtAmount: Neb.toNas(total)
       });
     }
@@ -291,7 +294,7 @@ class Bidding extends Component {
 
   render() {
     const { t } = this.props;
-    const { boughtAmount, serverTime } = this.state;
+    const { boughtAmount, nowOffset } = this.state;
 
 
     return (
@@ -305,7 +308,7 @@ class Bidding extends Component {
 
           <Banner {...this.props} />
           <BiddingAmountDetail boughtAmount={boughtAmount} {...this.props} />
-          <BiddingStart serverTime={serverTime} boughtAmount={boughtAmount} {...this.props} />
+          <BiddingStart nowOffset={nowOffset} boughtAmount={boughtAmount} {...this.props} />
           <BiddingRule {...this.props} />
           <Footer />
 

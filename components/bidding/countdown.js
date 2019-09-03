@@ -4,7 +4,7 @@ import { withTranslation } from '../../i18n';
 import { BIDDING_START_TIME, BIDDING_END_TIME } from '../../config/bidding';
 import { STAGE_NOT_START, STAGE_START, STAGE_END, getBiddingStage } from "../../utils/bidding";
 
-function Countdown({ t, serverTime }) {
+function Countdown({ t, nowOffset }) {
 
 
     // Random component
@@ -21,14 +21,17 @@ function Countdown({ t, serverTime }) {
         }
     };
 
-    const [now, setNow] = useState(Date.now());
+    const [timeOffset, setTimeOffset] = useState(0);
 
     useEffect(() => {
-        setNow(serverTime);
+        if (nowOffset) {
+            setTimeOffset(nowOffset);
+        }
     });
 
     const nowTime = () => {
-        return now;
+        // console.log('timeOffset', timeOffset);
+        return Date.now() - timeOffset;
     }
 
     let time_label, countdown_time, abs_time;
