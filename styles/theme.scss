@@ -1,0 +1,62 @@
+@import './layout.scss';
+@import './button.scss';
+@import './media.scss';
+
+$title-font-family: 'Saira Condensed', sans-serif;
+$content-font-family: sans-serif, 'Saira Condensed';
+
+body {
+    font-family: $title-font-family;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: $title-font-family;
+}
+
+p, label, a {
+    font-family: $title-font-family;
+}
+
+ul.feature {
+    list-style: none;
+    & > li::before {
+        content: "\2022";
+        color: #712FC5;
+        font-weight: bold;
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em;
+    }
+}
+
+// subscribe
+.subscribe-email {
+    margin: 0 auto 60px auto;
+    text-align: center;
+    display: inline-block;
+
+    input {
+        border: none;
+        outline: transparent;
+        background: transparent;
+        padding: 15px 20px;
+        border-radius: 0;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    button {
+        background: transparent;
+        border: transparent;
+        border-radius: 0;
+        padding: 15px 20px;
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        outline: transparent;
+        box-shadow: none;
+        color:#ccc;
+    }
+}
+  
