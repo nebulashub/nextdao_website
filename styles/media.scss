@@ -1,0 +1,69 @@
+$mobile-size: 768px;
+
+@media only screen and (max-width: $mobile-size) {
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .landing {
+        padding: 0 1.5rem;
+        background-size: cover !important;
+
+        .staking-method-list {
+            margin-top: 3rem !important;
+
+            .btn {
+                margin: 20px auto !important;
+                display: block;
+                text-align: center;
+                width: 200px;
+            }
+        }
+    }
+    .nextdao-intro {
+        padding: 2rem 0 !important;
+    }
+
+    .dstaking {
+        padding: 2rem 0 !important;
+
+        .feature {
+            display: inherit !important;
+        }
+
+        .nax.sub-container {
+            padding: 1.5rem !important;
+
+            .nax-distribution {
+                margin-top: 2rem;
+            }
+
+            .btn {
+                margin-right: auto !important;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+                width: 200px;
+            }
+        }
+    }
+
+    .nebulas {
+        padding: 0 !important;
+        background-size: cover !important;
+
+        .container {
+            padding: 0 2rem !important;
+
+            h3 {
+                padding-top: 2rem;
+            }
+
+            a {
+                padding-bottom: 2rem;
+                display: block;
+            }
+        }
+    }
+}
