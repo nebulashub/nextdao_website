@@ -11,11 +11,11 @@ const Landing = ({ t }) => (
     <h2 className="title">Smart Asset - {t('redefining-the-token-economy')} </h2>
 
     <div className="staking-method-list">
-      <Link href="/flash-nax">
+      {/* <Link href="/flash-nax">
         <a className="btn btn-primary">{t("flash-token-issuance")}</a>
-      </Link>
-      {/* <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">{t("wallet-staking")}</a>
-      <a href="#" target="__blank" className="btn btn-outline">{t("web-staking")}</a> */}
+      </Link> */}
+      <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">{t("wallet-staking")}</a>
+      <a href="https://dstaking.nebulas.io/" target="__blank" className="btn btn-outline">{t("web-staking")}</a>
     </div>
     <style jsx>{`
       .landing {
@@ -161,11 +161,14 @@ const DStaking = ({ t }) => (
         </div>
 
 
-        {/* <a className="link" target="__blank" href="#">Explorer ></a> */}
-        {/* 
+        <a className="link" target="__blank" href="https://explorer.nebulas.io/">Explorer ></a>
+        
         <a href="https://nano.nebulas.io/" target="__blank" className="btn btn-primary">{t("wallet-staking")}</a>
-        <a href="#" target="__blank" className="btn btn-outline black">{t("web-staking")}</a> 
-        */}
+        <a href="https://dstaking.nebulas.io/" target="__blank" className="btn btn-outline black">{t("web-staking")}</a>
+        <Link href="/flash-nax">
+          <a className="btn btn-text">{t("flash-token-issuance")} ></a>
+        </Link> 
+       
       </section>
 
     </section>
