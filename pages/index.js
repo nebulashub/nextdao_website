@@ -135,6 +135,7 @@ const DStaking = ({ t }) => (
         </ul>
       </section>
 
+
       <section className="sub-container nax">
         <div className="pure-g">
           <div className="pure-u-1 pure-u-lg-1-2">
@@ -159,7 +160,6 @@ const DStaking = ({ t }) => (
             <label>{t("dynamic-distribution-diagram")}</label>
           </div>
         </div>
-
 
         <a className="link" target="__blank" href="https://explorer.nebulas.io/">Explorer ></a>
         
@@ -310,10 +310,49 @@ const Nebulas = ({ t }) => (
   </section>
 )
 
+const partner_list = [
+  {
+    name:'genesisgroup',
+    title:'GENESIS Group',
+    site:'http://newgenesiscap.com/',
+  },
+  {
+    name:'biki',
+    title:'BiKi',
+    site:'https://www.biki.com/',
+  },
+  {
+    name:'jrr',
+    title:'JRR Capital',
+    site:'http://www.jrrcapital.com/',
+  },
+  {
+    name:'rootscap',
+    title:'ROOTSCAP',
+    site:'http://www.rootscap.com/',
+  },
+  {
+    name:'bncapital',
+    title:'BNCapital',
+    site:'http://bncapital.one/',
+  }
+]
+
 const Partners = ({ t }) => (
   <section className="partners">
     <section className="container">
       <h3>{t("investors-partners")}</h3>
+      <ul className="partner-list">
+        {
+          partner_list.map(p => 
+          <li key={p.name}>
+            <a href={p.site} target="__blank" >
+              <img className="partner-logo" src={`/static/images/partner/logo_${p.name}.png`} alt={p.title} />
+            </a>
+          </li>  
+          )
+        }
+      </ul>
     </section>
     <style jsx>{`
       .partners {
@@ -323,6 +362,24 @@ const Partners = ({ t }) => (
 
       .partners h3 {
         font-size:28px;
+      }
+
+      .partner-list {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+      }
+
+      .partner-list li {
+        margin: 0.5rem 1rem;
+      }
+
+      .partner-list .partner-logo {
+        height: 58px;
+        width: auto;
+        display: block;
       }
 
     `}</style>
@@ -336,7 +393,7 @@ const Index = (props) => (
     <NextDAOIntro  {...props} />
     <DStaking  {...props} />
     <Nebulas  {...props} />
-    {/* <Partners {...props} /> */}
+    <Partners {...props} />
     <Subscribe {...props} />
   </div>
 )

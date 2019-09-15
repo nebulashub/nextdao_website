@@ -4,4 +4,8 @@ $desktop-size: 1024px;
     max-width: $desktop-size;
     margin: 0 auto;
     padding: 0 1rem;
+
+    h3 {
+        margin-top: 0;
+    }
 }
