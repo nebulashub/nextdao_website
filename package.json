@@ -6,7 +6,7 @@
     "dev": "NODE_ENV=dev node server.js",
     "build": "next build",
     "export": "yarn build && next export",
-    "start": "node run build && node server.js"
+    "start": "npm run build && node server.js"
   },
   "engines": {
     "node": "10.16.3"
