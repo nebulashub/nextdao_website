@@ -6,7 +6,10 @@
     "dev": "NODE_ENV=dev node server.js",
     "build": "next build",
     "export": "yarn build && next export",
-    "start": "node server.js"
+    "start": "node run build && node server.js"
+  },
+  "engines": {
+    "node": "10.16.3"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
