@@ -66,4 +66,14 @@ $mobile-size: 768px;
             }
         }
     }
+
+    .partners {
+        .partner-list {
+            li {
+                img {
+                    height: 50px !important;
+                }
+            }
+        }
+    }
 }
